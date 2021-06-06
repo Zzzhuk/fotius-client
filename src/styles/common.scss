@@ -1,0 +1,43 @@
+//animation
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.slide-left-enter, /* .fade-leave-active below version 2.1.8 */
+{
+  transform: translateX(-100%);
+}
+.slide-left-leave {
+  transform: translateX(0)
+}
+.slide-left-leave-to {
+  position: relative;
+  z-index: 1;
+}
+.slide-left-enter-to {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  transform: translateX(0);
+}
+
+.slide-left-enter-active, .slide-left-leave-active {
+  transition: all .5s;
+}
+
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.form {
+  background: rgba(255,255,255,.5);
+  border-radius: 6px;
+  padding: 24px;
+  min-width: 360px;
+  text-align: center;
+}
