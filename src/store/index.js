@@ -57,7 +57,7 @@ export default new Vuex.Store({
     },
     async signUp({commit}, data) {
       try {
-        const response = await axios.post('/signup', {userData: JSON.stringify(encode(data))});
+        const response = await axios.post('/signup', encode({userData: JSON.stringify(data)}));
         commit('LOGIN', response.data.token);
         return {data: response.data};
       } catch (e) {

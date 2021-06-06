@@ -1,11 +1,11 @@
 <template>
   <div class="cards-box">
     <v-card class="card-item" v-for="(post, idx) in posts" :key="`post-${idx}`">
-      <div class="card-menu" v-if="user._id === post.user" @click="editPost(post)">
+      <div class="card-menu" v-if="user._id === post.user" @click.stop="editPost(post)">
         <v-btn fab color="#9ae84d" dark>
           <v-icon>mdi-pencil</v-icon>
         </v-btn>
-        <v-btn fab small color="red" dark @click="selectForDelete(post._id)">
+        <v-btn fab small color="red" dark @click.stop="selectForDelete(post._id)">
           <v-icon>mdi-delete</v-icon>
         </v-btn>
       </div>
